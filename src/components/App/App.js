@@ -59,7 +59,7 @@ class App extends Component {
         <Header />
         {this.props.children}
         <Feedback />
-        <Footer />
+        <Footer title='this is not a good title' />
       </div>
     ) : this.props.children;
   }

@@ -12,13 +12,22 @@ import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from './Footer.scss';
 import Link from '../Link';
 
-function Footer() {
+function Footer(props) {
+  const {
+    title
+  } = props;
+
   return (
     <div className={s.root}>
       <div className={s.container}>
         <span className={s.text}>© Your Company</span>
         <span className={s.spacer}>·</span>
-        <Link className={s.link} to="/">Home</Link>
+
+        { 
+          (typeof title !== 'undefined') && 
+          <Link className={s.link} to="/">{title}</Link>
+        }
+        
         <span className={s.spacer}>·</span>
         <Link className={s.link} to="/privacy">Privacy</Link>
         <span className={s.spacer}>·</span>
